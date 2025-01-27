@@ -1,0 +1,78 @@
+/* Status-Übersicht */
+.status-overview {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.status-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  width: 120px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s;
+}
+
+.status-card:hover {
+  border-color: #1a8b7f;
+}
+
+.status-number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #3c8e5f;
+  margin-bottom: 5px;
+}
+
+.status-label {
+  font-size: 14px;
+  color: #555;
+}
+/* Responsives Design: Anpassung für kleinere Bildschirme */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  input, select {
+    font-size: 0.9em;
+  }
+
+  button {
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .tenant-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tenant-item .tenant-info {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .status-overview {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .result-list {
+    grid-template-columns: 1fr;
+  }
+}

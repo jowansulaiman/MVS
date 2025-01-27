@@ -1,0 +1,31 @@
+/* Grundlegende Stile für Navigation */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #FFFFFF;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: rgb(10, 2, 2);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #4FB0AF;
+    color: #ffffff;
+  }
+  
+  .active {
+    background-color: #D9EEF1;
+    color: #1a8b7f;
+  }
+  

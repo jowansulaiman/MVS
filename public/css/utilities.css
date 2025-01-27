@@ -1,0 +1,46 @@
+/* Zusätzliche Stile für die Schrittinfo */
+.step-info {
+    color: #999;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+  /* Keine Daten-Meldung */
+  .no-data {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 40px 20px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .no-data .icon {
+    font-size: 50px;
+    color: #1a8b7f;
+    margin-bottom: 20px;
+  }
+  
+  .no-data h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .no-data p {
+    font-size: 14px;
+    color: #777;
+  }
+  .text-center {
+    text-align: center;
+  }
+  
+  .mt-20 {
+    margin-top: 20px;
+  }
+  
+  .mb-20 {
+    margin-bottom: 20px;
+  }
+  

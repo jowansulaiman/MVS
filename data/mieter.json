@@ -1,0 +1,96 @@
+[
+  {
+    "mieter_id": "mieter_1737914983605_557",
+    "anrede": "Herr",
+    "vorname": "Jowan",
+    "nachname": "Sulaiman",
+    "geburtsdatum": "2025-01-01",
+    "adresse": {
+      "straße": "Am Bahnhof  14",
+      "stadt": "Schleswig-Holstein - Schönkirchen",
+      "plz": "24232",
+      "land": "Germany"
+    },
+    "mieterTyp": "monatlich",
+    "mieteBetrag": 253,
+    "auszugsdatum": null,
+    "gesamtbetrag": null,
+    "einzugsdatum": "2025-01-01",
+    "status": "aktiv"
+  },
+  {
+    "mieter_id": "mieter_1737915357225_740",
+    "anrede": "Herr",
+    "vorname": "Haifa",
+    "nachname": "Daoud",
+    "geburtsdatum": "2025-01-23",
+    "adresse": {
+      "straße": "Am Bahnhof  14",
+      "stadt": "Schleswig-Holstein - Schönkirchen",
+      "plz": "24232",
+      "land": "Germany"
+    },
+    "mieterTyp": "pauschal",
+    "mieteBetrag": null,
+    "auszugsdatum": "2025-02-26",
+    "gesamtbetrag": 600,
+    "einzugsdatum": "2025-01-26",
+    "status": "aktiv"
+  },
+  {
+    "mieter_id": "mieter_1737915465244_720",
+    "anrede": "Herr",
+    "vorname": "max",
+    "nachname": "Sulaiman",
+    "geburtsdatum": "2025-01-02",
+    "adresse": {
+      "straße": "Am Bahnhof  14",
+      "stadt": "Schleswig-Holstein - Schönkirchen",
+      "plz": "24232",
+      "land": "Germany"
+    },
+    "mieterTyp": "monatlich",
+    "mieteBetrag": 789,
+    "auszugsdatum": null,
+    "gesamtbetrag": null,
+    "einzugsdatum": "2025-01-27",
+    "status": "aktiv"
+  },
+  {
+    "mieter_id": "mieter_1737921899156_571",
+    "anrede": "Herr",
+    "vorname": "mon",
+    "nachname": "na",
+    "geburtsdatum": "2025-01-09",
+    "adresse": {
+      "straße": "Am Bahnhof  14",
+      "stadt": "Schleswig-Holstein - Schönkirchen",
+      "plz": "24232",
+      "land": "Germany"
+    },
+    "mieterTyp": "monatlich",
+    "mieteBetrag": 909,
+    "auszugsdatum": null,
+    "gesamtbetrag": null,
+    "einzugsdatum": "2024-01-07",
+    "status": "aktiv"
+  },
+  {
+    "mieter_id": "mieter_1737979694255_494",
+    "anrede": "Herr",
+    "vorname": "Ali",
+    "nachname": "Diban",
+    "geburtsdatum": "2025-01-26",
+    "adresse": {
+      "straße": "Am Bahnhof  14",
+      "stadt": "Schleswig-Holstein - Schönkirchen",
+      "plz": "24232",
+      "land": "Germany"
+    },
+    "mieterTyp": "monatlich",
+    "mieteBetrag": 1250,
+    "auszugsdatum": null,
+    "gesamtbetrag": null,
+    "einzugsdatum": "2025-02-01"
+  }
+]

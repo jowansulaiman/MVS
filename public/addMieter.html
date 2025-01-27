@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mieter Löschen</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <script defer src="js/deleteMieter.js"></script>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <ul class="navbar">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="addMieter.html">Mieter Hinzufügen</a></li>
+    <li><a class="active" href="deleteMieter.html">Mieter Löschen</a></li>
+    <li><a href="zahlung.html">Zahlung</a></li>
+    <li><a href="bericht.html">Bericht</a></li>
+  </ul>
+
+  <!-- Hauptinhalt -->
+  <div class="container">
+    <h1>Mieter Löschen</h1>
+    <button id="openDeleteModalBtn">Mieter Löschen</button>
+  </div>
+
+  <!-- Pop-up für Mieter Löschen -->
+  <div class="modal-overlay" id="deleteModal">
+    <div class="modal">
+      <button class="modal-close" id="closeDeleteModal">&times;</button>
+
+      <div class="form-header">Mieter Löschen</div>
+      <form id="deleteTenantForm">
+        <!-- Auswahl des Mieters -->
+        <fieldset>
+          <legend>Wählen Sie einen Mieter aus:</legend>
+          <label for="mieterSelect">Mieter</label>
+          <select id="mieterSelect" name="mieterSelect" required>
+            <option value="" disabled selected>Wählen Sie einen Mieter...</option>
+          </select>
+        </fieldset>
+
+        <!-- Footer -->
+        <div class="form-footer">
+          <button type="button" class="cancel" id="cancelDeleteBtn">Abbrechen</button>
+          <button type="submit">Mieter Löschen</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zahlungsstatus aktualisieren</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="js/viewPayments.js" defer></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Mieter.html">Mieter</a></li>
+      <li><a class="active" href="zahlung.html">Zahlungen</a></li>
+      <li><a href="bericht.html">Bericht</a></li>
+      <li><a href="vertrag.html">Vertrag</a></li>
+    </ul>
+
+    <div class="container">
+      <h1>Wähle eine Option aus:</h1>
+
+      <div class="object-cards">
+        <!-- Karte 1: Zahlungsstatus aktualisieren -->
+        <div class="object-card">
+          <div class="icon">🔄</div>
+          <h2>Zahlungen verwalten</h2>
+          <button class="select-btn" id="openUpdatePaymentModal">
+            Auswählen
+          </button>
+        </div>
+
+        <!-- Karte 2: Zahlungsfälligkeit anzeigen -->
+        <div class="object-card">
+          <div class="icon">⏳</div>
+          <h2>Zahlungsfälligkeit anzeigen</h2>
+          <button class="select-btn" id="openPaymentDueModal">Auswählen</button>
+        </div>
+      </div>
+
+      <!-- Modal für Zahlungsstatus -->
+      <div class="modal-overlay" id="paymentModal">
+        <div class="modal">
+          <div class="modal-header">
+            <h2>Zahlungsstatus aktualisieren</h2>
+            <button class="modal-close" id="closePaymentModal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <ul class="tenant-list" id="paymentTenantList">
+              <!-- Dynamische Inhalte werden hier eingefügt -->
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal für Zahlungsfälligkeit -->
+      <div class="modal-overlay" id="paymentDueModal">
+        <div class="modal">
+          <div class="modal-header">
+            <h2>Zahlungsfälligkeit</h2>
+            <button class="modal-close" id="closePaymentDueModal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <ul class="unpaid-list" id="unpaidMonthsList">
+              <!-- Dynamische Inhalte werden hier eingefügt -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

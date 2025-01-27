@@ -1,0 +1,428 @@
+/* Objektkarte-Stil */
+.object-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    transition: border 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  /* Komponentenstile: Buttons, Inputs und Labels */
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+
+  button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .object-card.selected,
+  .object-card:hover {
+    border: 2px solid #1a8b7f;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Symbol/Icon in der Karte */
+  .icon {
+    font-size: 40px;
+    color: #1a8b7f;
+    margin-bottom: 20px;
+  }
+  
+  /* Titel und Beschreibung der Karte */
+  h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Auswahl-Button */
+  .select-btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #106be2;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .select-btn:hover {
+    background-color: #b3b3b3;
+  }
+  
+  /* Status-Übersicht */
+  .status-overview {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  
+  .status-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    width: 120px;
+    padding: 20px;
+    text-align: center;
+    transition: border-color 0.3s;
+  }
+  
+  .status-card:hover {
+    border-color: #1a8b7f;
+  }
+  
+  .status-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3c8e5f;
+  }
+  
+  .status-label {
+    font-size: 14px;
+    color: #555;
+    margin-top: 8px;
+  }
+  
+
+  /* Pop-up (Modal) */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s;
+  }
+
+  .modal-overlay.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .modal {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 600px;
+    max-width: 90%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #999;
+  }
+
+  .modal-close:hover {
+    color: #333;
+  }
+
+/* Mieterliste */
+.tenant-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tenant-item {
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+  width: 100%;
+}
+
+.tenant-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tenant-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-grow: 1;
+}
+
+.tenant-info .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+.tenant-info .badge {
+  background: #ECEEF0; /* Gelbe Farbe für befristete Mieter */
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.tenant-details {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  background: #f1f1f1;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.tenant-details.hidden {
+  display: none;
+}
+
+.tenant-details:not(.hidden) {
+  display: block;
+}
+
+.action-btn {
+  background: #007bff;
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filter-btn {
+  padding: 10px 15px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  background-color: #0056b3;
+}
+
+.status-card {
+  text-align: center;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.terminate-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.terminate-item p {
+  margin: 0;
+  flex-grow: 1;
+  font-size: 16px;
+  color: #333;
+}
+
+.terminate-item button {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.terminate-item button:hover {
+  background-color: #0056b3;
+}
+
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+
+.payment-details-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.payment-details-list li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mark-paid-btn {
+  float: right;
+
+}
+
+.report-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.report-item {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background-color: #f4f4f4;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+}
+
+tfoot td {
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+.unpaid-item {
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+  width: 100%;
+}
+
+.unpaid-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-grow: 1;
+}
+
+.unpaid-info ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.unpaid-info ul li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}

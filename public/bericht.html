@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finanzen - Einnahmen / Ausgaben</title>
+  <link rel="stylesheet" href="styles.css">
+
+<script src="js/bericht.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a  href="Mieter.html">Mieter</a></li>
+      <li><a href="zahlung.html">Zahlung</a></li>
+      <li><a class="active" href="bericht.html">Bericht</a></li>
+      <li><a  href="vertrag.html">Vertrag</a></li>
+    </ul>
+  
+  <div class="container">
+    <!-- Seitenleiste -->
+  
+
+    <!-- Hauptinhalt -->
+    <main class="content">
+      <!-- Filterleiste -->
+      <div class="filter-bar">
+        <input type="text" placeholder="02.05.2024 ~ 02.11.2024" class="date-input">
+        
+        <select id="monthSelector"></select>
+
+        <select class="filter-select">
+          <option>Bezahlt</option>
+          <option>Offen</option>
+        </select>
+        
+      <select id="reportType" class="filter-select">
+        <option value="monatlich">Monatliche Mieter</option>
+        <option value="pauschal">Pauschale Mieter</option>
+      </select>
+        
+      <button id="loadReportBtn">anzeigen</button>
+      <button id="downloadPdfBtn">⬇️ PDF</button>
+      </div>
+
+
+      <div id="reportList" class="report-list">
+        <!-- Berichte werden dynamisch hier geladen -->
+      </div>
+    </main>
+
+  </div>
+</body>
+</html>

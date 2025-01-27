@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zahlungsstatus aktualisieren</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="js/contract.js" defer></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Mieter.html">Mieter</a></li>
+      <li><a href="zahlung.html">Zahlungen</a></li>
+      <li><a href="bericht.html">Bericht</a></li>
+      <li><a class="active" href="vertrag.html">Vertrag</a></li>
+    </ul>
+
+    <div class="container">
+      <h1>Wähle eine Option aus:</h1>
+
+      <div class="object-cards">
+        <!-- Karte 1: Zahlungsstatus aktualisieren -->
+        <div class="object-card">
+          <div class="icon">📄</div>
+          <h2>Mietvertrag erstellen</h2>
+          <button class="select-btn">Auswählen</button>
+        </div>
+
+        <!-- Karte 1: Zahlungsstatus aktualisieren -->
+        <div class="object-card">
+          <div class="icon">✅</div>
+          <h2>Zahlungsbestätigung</h2>
+          <button class="select-btn">Auswählen</button>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- Modal für Mietvertrag -->
+    <div class="modal-overlay" id="contractModal">
+      <div class="modal">
+        <div class="modal-header">
+          <h2>Mietvertrag erstellen</h2>
+          <button class="modal-close" id="closeContractModal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="contractForm">
+            <label for="mieterId">Mieter:</label>
+            <select id="mieterId" name="tenantId" required>
+              <option value="" disabled selected>
+                Wählen Sie einen Mieter
+              </option>
+            </select>
+
+            <label for="roomCount">Anzahl der Wohnräume:</label>
+            <input
+              type="number"
+              id="roomCount"
+              name="roomCount"
+              required
+              min="1"
+            />
+
+            <label for="additionalCosts">Nebenkosten (€):</label>
+            <input
+              type="number"
+              id="additionalCosts"
+              name="additionalCosts"
+              required
+              step="0.01"
+            />
+
+            <label for="heatingCosts">Heizkosten (€):</label>
+            <input
+              type="number"
+              id="heatingCosts"
+              name="heatingCosts"
+              required
+              step="0.01"
+            />
+
+            <div class="form-footer">
+              <button type="submit" class="btn">Erstellen</button>
+              <button type="button" class="cancel-btn" id="closeContractModal">
+                Abbrechen
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

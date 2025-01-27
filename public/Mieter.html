@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mieter Optionen</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="js/addMieter.js" defer></script>
+    <script src="js/viewMieter.js" defer></script>
+    <script src="js/monthlyTenants.js" defer></script>
+    <script src="js/fixedTermTenants.js" defer></script>
+    <script src="js/terminateTenant.js" defer></script>
+
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="Mieter.html">Mieter</a></li>
+      <li><a href="zahlung.html">Zahlung</a></li>
+      <li><a href="bericht.html">Bericht</a></li>
+      <li><a  href="vertrag.html">Vertrag</a></li>
+    </ul>
+
+    <!-- Hauptinhalt -->
+    <div class="container">
+      <h1>Mieter Verwaltung</h1>
+
+      <div class="object-cards">
+        <!-- Karte 1: Mieter hinzufügen -->
+        <div class="object-card">
+          <div class="icon">👤+</div>
+          <h2>Mieter Hinzufügen</h2>
+          <button class="select-btn" id="addTenantBtn">Auswählen</button>
+        </div>
+        <!-- Karte 2: Mieter löschen -->
+        <div class="object-card">
+          <div class="icon">❌</div>
+          <h2>Mieter Kündigen</h2>
+          <button class="select-btn" id="showTerminateTenantModalBtn">Auswählen</button>
+        </div>
+
+        <!-- Karte 3: Monatliche Mieter anzeigen -->
+        <div class="object-card">
+          <div class="icon">📅</div>
+          <h2>Monatliche Mieter anzeigen</h2>
+          <button class="select-btn" id="showMonthlyTenantsBtn">
+            Auswählen
+          </button>
+        </div>
+
+        <!-- Karte 4: Befristete Mieter anzeigen -->
+        <div class="object-card">
+          <div class="icon">⏳</div>
+          <h2>Befristete Mieter anzeigen</h2>
+          <button class="select-btn" id="showFixedTermTenantsBtn">Auswählen</button>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="modal-overlay" id="monthlyTenantsModal">
+      <div class="modal">
+        <div class="modal-header">
+          <h2>Monatliche Mieter</h2>
+          <button class="modal-close" id="closeMonthlyModal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <ul class="tenant-list" id="tenantList">
+            <!-- Dynamische Inhalte -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="fixedTermTenantsModal">
+      <div class="modal">
+        <div class="modal-header">
+          <h2>Befristete Mieter</h2>
+          
+          <button class="modal-close" id="closeFixedTermModal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <ul class="tenant-list" id="fixedTenantList">
+            <!-- Dynamische Inhalte -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal für Mieter Kündigen -->
+    <div class="modal-overlay" id="terminateTenantModal">
+      <div class="modal">
+        <div class="modal-header">
+          <h2>Mieter Kündigen</h2>
+          <button class="modal-close" id="closeTerminateModal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <ul id="terminateTenantList" class="tenant-list">
+            <!-- Dynamische Inhalte -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+
+
+    <!-- Modal für Mieter Hinzufügen -->
+    <div class="modal-overlay" id="modal">
+      <div class="modal">
+        <button class="modal-close" id="closeModal">&times;</button>
+        <h2>Mieter Hinzufügen</h2>
+
+        <div class="modal-body">
+        <form id="addTenantForm">
+          <fieldset>
+            <legend>Kontakt</legend>
+            <label for="anrede">Anrede</label>
+            <select id="anrede" name="anrede" required>
+              <option value="Herr">Herr</option>
+              <option value="Frau">Frau</option>
+              <option value="Andere">Andere</option>
+            </select>
+
+            <label for="vorname">Vorname</label>
+            <input
+              type="text"
+              id="vorname"
+              name="vorname"
+              placeholder="Vorname"
+              required
+            />
+
+            <label for="nachname">Nachname</label>
+            <input
+              type="text"
+              id="nachname"
+              name="nachname"
+              placeholder="Nachname"
+              required
+            />
+
+            <label for="geburtsdatum">Geburtsdatum</label>
+            <input type="date" id="geburtsdatum" name="geburtsdatum" required />
+          </fieldset>
+
+          <fieldset>
+            <legend>Adresse</legend>
+            <label for="straße">Straße</label>
+            <input
+              type="text"
+              id="straße"
+              name="straße"
+              placeholder="Straße"
+              required
+            />
+
+            <label for="stadt">Stadt</label>
+            <input
+              type="text"
+              id="stadt"
+              name="stadt"
+              placeholder="Stadt"
+              required
+            />
+
+            <label for="plz">Postleitzahl</label>
+            <input
+              type="text"
+              id="plz"
+              name="plz"
+              placeholder="Postleitzahl"
+              required
+            />
+
+            <label for="land">Land</label>
+            <input
+              type="text"
+              id="land"
+              name="land"
+              placeholder="Land"
+              required
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Mieter Details</legend>
+            <label for="einzugsdatum">Einzugsdatum</label>
+            <input type="date" id="einzugsdatum" name="einzugsdatum" required />
+
+            <label for="mieterTyp">Mieter-Typ</label>
+            <select
+              id="mieterTyp"
+              name="mieterTyp"
+              onchange="toggleMieterDetails()"
+              required
+            >
+              <option value="monatlich">Monatlich</option>
+              <option value="pauschal">Pauschal</option>
+            </select>
+
+            <!-- Monatlich Details -->
+            <div id="monatlichDetails" style="display: none">
+              <label for="mieteBetrag">Monatliche Miete (€)</label>
+              <input
+                type="number"
+                id="mieteBetrag"
+                name="mieteBetrag"
+                step="0.01"
+                placeholder="Betrag"
+              />
+            </div>
+
+            <!-- Pauschal Details -->
+            <div id="pauschalDetails" style="display: none">
+              <label for="auszugsdatum">Auszugsdatum</label>
+              <input
+                type="date"
+                id="auszugsdatum"
+                name="auszugsdatum"
+                required
+                placeholder="Auszugsdatum"
+              />
+
+              <label for="gesamtbetrag">Gesamtbetrag (€)</label>
+              <input
+                type="number"
+                id="gesamtbetrag"
+                name="gesamtbetrag"
+                step="0.01"
+                placeholder="Betrag"
+                required
+              />
+            </div>
+          </fieldset>
+       
+        </div>
+          <!-- Modal Footer -->
+          <div class="form-footer">
+            <button type="button" class="cancel" id="cancelBtn">
+              Abbrechen
+            </button>
+            <button id="submitBtn" type="submit">Hinzufügen</button>
+          </div>
+      </div>
+    </form>
+    </div>
+  </body>
+</html>

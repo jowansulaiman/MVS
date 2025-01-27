@@ -1,0 +1,56 @@
+/* Grundlegende Stile für den gesamten Inhalt */
+* {
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /* Basisstile: Schriftarten, Farben, allgemeine Einstellungen */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, legend {
+    font-weight: bold;
+  }
+
+  body {
+    background-color: #F6F7FA;
+    color: #555;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Hauptüberschrift */
+  h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+  }
+
+  /* Standard-Absatz */
+  p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+  }
+
+/* Modal Header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.modal-close {
+  cursor: pointer;
+  font-size: 20px;
+  background: none;
+  border: none;
+}
