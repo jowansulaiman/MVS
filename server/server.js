@@ -18,6 +18,14 @@ const mieterRoutes = require("./routes/mieter");
 const berichteRoutes = require("./routes/bericht");
 const contractsRoutes = require("./routes/contract");
 const authRoutes = require("./routes/auth");
+const session = require("express-session");
+
+app.use(session({
+  secret: "lvno auit qplz knye", // Ändere dies zu einem sicheren Schlüssel
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: false } // Setze auf `true`, wenn du HTTPS verwendest
+}));
 
 // Routenregistrierung
 app.use("/api/mieter", mieterRoutes);

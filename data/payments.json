@@ -1,51 +1,10 @@
 {
-  "mieter_1737914983605_557": {
-    "monatlich": [
-      {
-        "monat": "2025-01",
-        "tag": 1,
-        "status": "offen"
-      }
-    ]
-  },
-  "mieter_1737915357225_740": {
-    "pauschal": [
-      {
-        "zeitraum": "2025-01-26 bis 2025-02-26",
-        "bezahlt": 0,
-        "status": "bezahlt"
-      }
-    ]
-  },
-  "mieter_1737915465244_720": {
-    "monatlich": [
-      {
-        "monat": "2025-01",
-        "tag": 27,
-        "status": "offen"
-      },
-      {
-        "monat": "2024-12",
-        "tag": 27,
-        "status": "offen"
-      }
-    ]
-  },
-  "mieter_1737921899156_571": {
-    "monatlich": [
-      {
-        "monat": "2025-01",
-        "tag": 7,
-        "status": "bezahlt"
-      }
-    ]
-  },
-  "mieter_1737979694255_494": {
+  "mieter_1738415386726_101": {
     "monatlich": [
       {
         "monat": "2025-02",
-        "tag": 1,
-        "status": "bezahlt"
+        "tag": 7,
+        "status": "offen"
       }
     ]
   }

@@ -33,24 +33,27 @@ document.addEventListener("DOMContentLoaded", () => {
     verifyForm.addEventListener("submit", async (event) => {
       event.preventDefault();
       const code = document.getElementById("code").value;
-  
+    
       try {
         const response = await fetch("/api/auth/verify-code", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ code }),
         });
-  
+    
         if (!response.ok) {
           throw new Error("Code ungültig.");
         }
-  
+    
         alert("Login erfolgreich!");
-        window.location.href = "index.html"; // Weiterleitung nach dem Login
+        const redirectTo = sessionStorage.getItem("redirectTo") || "index.html"; // Ziel speichern
+        window.location.href = redirectTo;
       } catch (error) {
         console.error("Fehler beim Verifizieren des Codes:", error);
         alert("Ein Fehler ist aufgetreten.");
       }
     });
+    
+    
   });
   

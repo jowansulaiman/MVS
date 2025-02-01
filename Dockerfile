@@ -11,6 +11,7 @@ COPY package.json ./
 RUN npm install
 RUN npm install node-cron
 RUN npm install nodemailer
+RUN npm install express-session
 
 # Kopieren des gesamten Projektverzeichnisses
 COPY . .

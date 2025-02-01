@@ -1,8 +1,7 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async() => {
   const reportList = document.getElementById("reportList");
   const reportTypeSelect = document.getElementById("reportType");
   const loadReportButton = document.getElementById("loadReportBtn");
-  const downloadPdfButton = document.getElementById("downloadPdfBtn");
   const monthSelector = document.getElementById("monthSelector");
   const statusFilter = document.getElementById("statusFilter"); // Status-Dropdown
 
@@ -24,21 +23,25 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // PDF herunterladen
-  downloadPdfButton.addEventListener("click", () => {
-    const element = document.querySelector(".report-list");
-    if (!element || element.innerHTML.trim() === "") {
-      alert("Es gibt keine Berichte zum Herunterladen.");
+  document.getElementById("downloadPdfBtn").addEventListener("click", () => {
+    const reportContent = document.getElementById("reportList");
+  
+    if (!reportContent || reportContent.children.length === 0) {
+      reportList.innerHTML = `<p>Es gibt keine Berichte zum Herunterladen.</p>`;
       return;
     }
-
-    const opt = {
-      margin: 1,
-      filename: "Zahlungsbericht.pdf",
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+  
+    const options = {
+      margin: 0.5,
+      filename: "Bericht.pdf",
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 1.2 },
+      jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
     };
-    html2pdf().from(element).set(opt).save();
+  
+    html2pdf().set(options).from(reportContent).save();
   });
+  
 
   // Funktion: Berichte laden
   async function loadReports(reportType, month, status) {
@@ -139,4 +142,29 @@ document.addEventListener("DOMContentLoaded", () => {
       monthSelector.appendChild(option);
     }
   }
+
+
+  function generateReportList(data) {
+    if (data.length === 0) {
+      reportList.innerHTML = `<p>Keine Berichte gefunden.</p>`;
+      return;
+    }
+
+    const reportItems = data.map(
+      (item) => `
+      <div class="report-item">
+        <p><strong>ID:</strong> ${item.mieterId}</p>
+        <p><strong>Name:</strong> ${item.name}</p>
+        <p><strong>Mietart:</strong> ${item.mietart}</p>
+        <p><strong>Zeitraum:</strong> ${item.zeitraum}</p>
+        <p><strong>Betrag Offen:</strong> ${item.betragOffen} €</p>
+        <p><strong>Betrag Bezahlt:</strong> ${item.betragBezahlt} €</p>
+        <p><strong>Status:</strong> ${item.status}</p>
+      </div>
+      `
+    );
+
+    reportList.innerHTML = reportItems.join("");
+  }
+
 });

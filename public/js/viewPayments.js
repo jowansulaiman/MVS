@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     paymentDueModal?.classList.remove("active");
   });
 
-  // Funktion: Mieter laden und anzeigen
+  //Mieter laden und anzeigen
   async function loadTenants() {
     try {
       const response = await fetch("/api/mieter");
@@ -92,8 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   
-  // Funktion: Unbezahlte Monate laden und anzeigen
-// Funktion: Zahlungsdetails laden
+  //Unbezahlte Monate laden und anzeigen
+//Zahlungsdetails laden
 async function loadPaymentDetails(tenantId) {
   const paymentDetailsList = document.getElementById(`payment-details-${tenantId}`);
 
@@ -152,7 +152,7 @@ async function loadPaymentDetails(tenantId) {
   }
 }
 
-  // Funktion: Unbezahlte Monate laden und anzeigen
+  //Unbezahlte Monate laden und anzeigen
   async function loadUnpaidMonths() {
     try {
       const mieterResponse = await fetch("/api/mieter");
@@ -194,8 +194,6 @@ async function loadPaymentDetails(tenantId) {
                 <div>
                   <div class="name">${tenant.vorname} ${tenant.nachname}</div>
                   <div class="badge">${tenant.mieterTyp}</div>
-
-                 
                 </div>
               </div>
             </div>
@@ -203,10 +201,6 @@ async function loadPaymentDetails(tenantId) {
               <p><strong>Einzugsdatum:</strong>  ${unpaidMonths.map((period) => `${period}`).join("")}</p>
               <p><strong>Miete (€):</strong> ${betrag}</p>
             </div>
-
-
-
-              
             `;
       
             unpaidMonthsList.appendChild(listItem);
@@ -226,7 +220,7 @@ async function loadPaymentDetails(tenantId) {
     }
   }
 
-  // Funktion: Unbezahlte Monate berechnen
+  //Unbezahlte Monate berechnen
   function calculateUnpaidMonths(tenant, paymentData) {
     const currentDate = new Date();
     const unpaidMonths = [];
@@ -262,8 +256,7 @@ async function loadPaymentDetails(tenantId) {
   
     return unpaidMonths;
   }
-  // Zahlungsstatus aktualisieren
- // Funktion: Zahlungsstatus aktualisieren
+ //Zahlungsstatus aktualisieren
  async function updatePaymentStatus(tenantId, period) {
   try {
     const response = await fetch(`/api/payments/${tenantId}`, {
@@ -282,7 +275,7 @@ async function loadPaymentDetails(tenantId) {
 }
 
 
-  // Funktion: Zeitraum formatieren
+  //Zeitraum formatieren
  function formatPeriod(date) {
   const startDate = new Date(date.getFullYear(), date.getMonth(), 1); // Erster Tag des Monats
   const endDate = new Date(date.getFullYear(), date.getMonth() + 1, 0); // Letzter Tag des Monats

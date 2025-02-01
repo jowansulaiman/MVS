@@ -56,6 +56,7 @@ router.post("/send-code", async (req, res) => {
 });
 
 // Code-Verifizierung
+// In /api/auth/verify-code
 router.post("/verify-code", async (req, res) => {
   const { email, code } = req.body;
 
@@ -78,11 +79,23 @@ router.post("/verify-code", async (req, res) => {
     }
 
     // Anmeldung erfolgreich
+    req.session.user = { email }; // Benutzer in der Sitzung speichern
     res.status(200).json({ message: "Erfolgreich angemeldet." });
   } catch (error) {
     console.error("Fehler bei der Code-Verifizierung:", error);
     res.status(500).json({ message: "Interner Serverfehler." });
   }
 });
+
+
+// In /api/auth
+router.get("/check-session", (req, res) => {
+  if (req.session.user) {
+    return res.status(200).json({ message: "Angemeldet", user: req.session.user });
+  } else {
+    return res.status(401).json({ message: "Nicht authentifiziert" });
+  }
+});
+
 
 module.exports = router;
