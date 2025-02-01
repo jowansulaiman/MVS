@@ -21,23 +21,32 @@ git clone https://github.com/jowansulaiman/MVS.git
 cd MVS
 ```
 
-### **3️⃣ Konfigurationsdateien anpassen**  
+### **3️⃣Docker Container starten**  
 
 Erstelle eine .env Datei im Hauptverzeichnis und füge folgende Konfiguration ein:
 ```bash
-# Server-Konfiguration
-PORT=3000
+docker-compose up --build -d
 
-# Datenbank / JSON-Dateipfade
-DATA_DIR=/app/data
-
-# SMTP Konfiguration für E-Mail-Versand
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=dein.email@gmail.com
-SMTP_PASS=dein-app-passwort
-
-# Session Secret für Authentifizierung
-SESSION_SECRET=geheimer_schlüssel
 ```
+
+# **✅ Erklärung:**  
+
+    * --build stellt sicher, dass das Image neu gebaut wird.
+    * -d startet die Container im Hintergrund.
+Falls du die Logs sehen möchtest, lasse das -d weg:
+```bash
+docker-compose up --build
+
+```
+
+### **4️⃣ Überprüfen, ob der Server läuft**  
+
+Öffne deinen Browser und rufe folgende URL auf:
+
+```bash
+http://localhost:3000
+```
+Der Server sollte laufen, und du solltest die Login-Seite sehen.
+
+
 
