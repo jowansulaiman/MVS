@@ -2,6 +2,13 @@
 Ein webbasiertes System zur Verwaltung von Mietern, Zahlungen und Mietverträgen mit Authentifizierung über E-Mail-Codes.
 
 ---
+### **⚠ Bekannte Probleme & Einschränkungen**  
+❗ Login-System
+    - Der Login funktioniert technisch, ist aber noch nicht in das System integriert.
+    - Nutzer müssen sich aktuell nicht anmelden, um auf die Seite zuzugreifen.
+❌ Vertragsbereich funktioniert nicht
+    - Der Vertragsbereich in der UI ist nicht funktionsfähig.
+    - Versuche, einen Mietvertrag zu erstellen, schlagen fehl.
 
 ## 🚀 **Installation & Setup**  
 
@@ -12,7 +19,7 @@ Stelle sicher, dass folgende Programme installiert sind:
 
 ---
 
-## 🛠 **Schritt-für-Schritt Anleitung zur Einrichtung**  
+## 🛠 **Anleitung zur Einrichtung**  
 
 ### **2️⃣ Projekt klonen**  
 
@@ -31,12 +38,16 @@ docker-compose up --build -d
 
 ###### **✅ Erklärung:**  
 
-    * --build stellt sicher, dass das Image neu gebaut wird.
-    * -d startet die Container im Hintergrund.
+    - --build stellt sicher, dass das Image neu gebaut wird.
+    - -d startet die Container im Hintergrund.
 Falls du die Logs sehen möchtest, lasse das -d weg:
 ```bash
 docker-compose up --build
+```
+Container stoppen:
 
+```bash
+docker-compose down
 ```
 
 ### **4️⃣ Überprüfen, ob der Server läuft**  
@@ -46,7 +57,7 @@ docker-compose up --build
 ```bash
 http://localhost:3000
 ```
-Der Server sollte laufen, und du solltest die Login-Seite sehen.
+Der Server sollte laufen, und du solltest die Seiten sehen.
 
 
 
