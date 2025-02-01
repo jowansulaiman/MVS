@@ -6,7 +6,7 @@ Ein webbasiertes System zur Verwaltung von Mietern, Zahlungen und Mietverträgen
 ❗ Login-System
 - Der Login funktioniert technisch, ist aber noch nicht in das System integriert.
 - Nutzer müssen sich aktuell nicht anmelden, um auf die Seite zuzugreifen.
-❌ Vertragsbereich funktioniert nicht
+- ❌ Vertragsbereich funktioniert nicht
 - Der Vertragsbereich in der UI ist nicht funktionsfähig.
 - Versuche, einen Mietvertrag zu erstellen, schlagen fehl.
 
