@@ -4,11 +4,11 @@ Ein webbasiertes System zur Verwaltung von Mietern, Zahlungen und Mietverträgen
 ---
 ### **⚠ Bekannte Probleme & Einschränkungen**  
 ❗ Login-System
-    - Der Login funktioniert technisch, ist aber noch nicht in das System integriert.
-    - Nutzer müssen sich aktuell nicht anmelden, um auf die Seite zuzugreifen.
+- Der Login funktioniert technisch, ist aber noch nicht in das System integriert.
+- Nutzer müssen sich aktuell nicht anmelden, um auf die Seite zuzugreifen.
 ❌ Vertragsbereich funktioniert nicht
-    - Der Vertragsbereich in der UI ist nicht funktionsfähig.
-    - Versuche, einen Mietvertrag zu erstellen, schlagen fehl.
+- Der Vertragsbereich in der UI ist nicht funktionsfähig.
+- Versuche, einen Mietvertrag zu erstellen, schlagen fehl.
 
 ## 🚀 **Installation & Setup**  
 
@@ -38,8 +38,8 @@ docker-compose up --build -d
 
 ###### **✅ Erklärung:**  
 
-    - --build stellt sicher, dass das Image neu gebaut wird.
-    - -d startet die Container im Hintergrund.
+     --build stellt sicher, dass das Image neu gebaut wird.
+     -d startet die Container im Hintergrund.
 Falls du die Logs sehen möchtest, lasse das -d weg:
 ```bash
 docker-compose up --build
