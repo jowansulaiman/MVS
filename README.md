@@ -29,7 +29,7 @@ docker-compose up --build -d
 
 ```
 
-# **✅ Erklärung:**  
+###### **✅ Erklärung:**  
 
     * --build stellt sicher, dass das Image neu gebaut wird.
     * -d startet die Container im Hintergrund.
