@@ -19,7 +19,7 @@ Stelle sicher, dass folgende Programme installiert sind:
 ```bash
 git clone https://github.com/jowansulaiman/MVS.git
 cd MVS
-
+```
 
 ### **3️⃣ Konfigurationsdateien anpassen**  
 
